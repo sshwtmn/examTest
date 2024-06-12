@@ -30,10 +30,10 @@ class AppBarMenu extends StatelessWidget {
               Icons.shop,
               color: Colors.white,
             ),
-            title: StyledText("My orders"),
+            title: const StyledText("My orders"),
             onTap: () {
               Navigator.push(context, MaterialPageRoute(
-                  builder: (context) =>  MyBookingsScreen())
+                  builder: (context) =>  const MyBookingsScreen())
               );
             },
           ),

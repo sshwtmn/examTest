@@ -1,6 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:kati_masterclass_app/screens/login_screen.dart';
 import 'package:kati_masterclass_app/screens/main_screen_widget.dart';
 
 import 'lofin_or_register.dart';

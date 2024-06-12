@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:kati_masterclass_app/screens/register_screen.dart';
 import 'package:kati_masterclass_app/services/auth_service.dart';
 
 import '../components/styled_button.dart';
@@ -18,10 +17,10 @@ class _LoginWidgetState extends State<LoginWidget> {
   final _passwordController = TextEditingController();
 
   void login() async {
-    final _authservice = AuthService();
+    final authservice = AuthService();
 
     try {
-      await _authservice.signInWithEmailAndPassword(
+      await authservice.signInWithEmailAndPassword(
           _emailController.text, _passwordController.text);
     }
     catch (e) {

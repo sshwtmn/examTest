@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:kati_masterclass_app/models/booking.dart';
 import 'package:kati_masterclass_app/services/auth_service.dart';
@@ -8,7 +9,6 @@ import 'package:provider/provider.dart';
 
 import '../components/styled_button.dart';
 import '../components/styled_text.dart';
-import '../providers/bookings.dart';
 import '../providers/products_provider.dart';
 
 class ProductDetailsWidget extends StatefulWidget {
@@ -82,7 +82,7 @@ class _ProductDetailsWidgetState extends State<ProductDetailsWidget> {
             const SizedBox(height: 50,),
             StyledButton(
                 onPressed: () {
-                  final bookService;
+                  final Future<DocumentReference<Booking>> bookService;
                   bookService = FireStoreService.bookingsRef.add(
                       Booking(id: products.id, userEmail: currentUserEmail, productId: products.id, price: products.price));
                 },

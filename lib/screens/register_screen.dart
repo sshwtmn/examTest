@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:kati_masterclass_app/screens/login_screen.dart';
 import 'package:kati_masterclass_app/services/auth_service.dart';
 
 import '../components/styled_button.dart';
@@ -21,9 +20,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
   String? errorText;
 
   void register() async {
-    final _authService = AuthService();
+    final authService = AuthService();
     try {
-      await _authService.signUpWithEmailAndPassword(
+      await authService.signUpWithEmailAndPassword(
         _emailController.text,
         _passwordController.text,
       );

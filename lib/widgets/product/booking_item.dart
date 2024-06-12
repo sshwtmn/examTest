@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:kati_masterclass_app/models/booking.dart';
-import 'package:kati_masterclass_app/screens/my_orders_screen.dart';
 import 'package:provider/provider.dart';
 
 import '../../providers/product.dart';
