@@ -5,13 +5,12 @@ import 'package:provider/provider.dart';
 import '../../providers/product.dart';
 
 class ProductItem extends StatelessWidget {
-  const ProductItem({
-    super.key,
-  });
+  const ProductItem({super.key,});
 
   @override
   Widget build(BuildContext context) {
     final productData = Provider.of<Product>(context,listen: false);
+
     return ClipRRect(
       borderRadius: BorderRadius.circular(10),
       child: GridTile(

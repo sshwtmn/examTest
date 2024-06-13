@@ -10,12 +10,15 @@ class Products with ChangeNotifier {
       return [..._items];
     }
 
-    Product findById(String id){
+    Product findById(String id)  {
       return _items.firstWhere((prod) => prod.id == id);
     }
     
-    void addProduct(Product product){
-      FireStoreService.addProduct(product);
+    void addProduct(Product product) async {
+      await FireStoreService.addProduct(product);
+
+      _items.add(product);
+      notifyListeners();
     }
 
     void fetchAllProducts() async {

@@ -4,6 +4,7 @@ import '../providers/products_provider.dart';
 import '../widgets/product/product_grid_builder.dart';
 import '../components/app_drawer.dart';
 
+
 class MainScreenWidget extends StatefulWidget {
   const MainScreenWidget({super.key});
 
@@ -14,18 +15,14 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
 
   @override
   void initState() {
-    Provider.of<Products>(context, listen: false).fetchAllProducts();
+    Provider.of<Products>(context,listen: false)
+        .fetchAllProducts();
     super.initState();
-  }
-
-  void update(){
-    setState(() {
-      Provider.of<Products>(context, listen: false).fetchAllProducts();
-    });
   }
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
         appBar: AppBar(
           title: const Text("Braids"),

@@ -8,7 +8,8 @@ class Product with ChangeNotifier {
   final String price;
   final String imageUrl;
 
-  Product({required this.id,
+  Product({
+    required this.id,
     required this.title,
     required this.description,
     required this.price,
@@ -25,8 +26,9 @@ class Product with ChangeNotifier {
   }
 
   factory Product.fromFirestore(
-    DocumentSnapshot<Map<String, dynamic>> snapshot, SnapshotOptions  ? options)
-    {
+    DocumentSnapshot<Map<String, dynamic>> snapshot,
+      SnapshotOptions  ? options) {
+
     final data = snapshot.data()!;
 
     Product product = Product(

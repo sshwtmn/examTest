@@ -4,16 +4,21 @@ import 'package:provider/provider.dart';
 
 import '../../providers/products_provider.dart';
 
-class ProductGridBuilder extends StatelessWidget {
+class ProductGridBuilder extends StatefulWidget {
   const ProductGridBuilder({
     super.key,
   });
 
   @override
+  State<ProductGridBuilder> createState() => _ProductGridBuilderState();
+}
+
+class _ProductGridBuilderState extends State<ProductGridBuilder> {
+
+  @override
   Widget build(BuildContext context) {
     final productsData = Provider.of<Products>(context);
     final products = productsData.items;
-
     return GridView.builder(
       padding: const EdgeInsets.all(20.0),
       itemCount: products.length,

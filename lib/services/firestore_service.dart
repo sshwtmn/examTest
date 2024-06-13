@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-import '../models/booking.dart';
+import '../providers/booking.dart';
 import '../providers/product.dart';
 
 class FireStoreService {
@@ -18,6 +18,8 @@ class FireStoreService {
   static Future<QuerySnapshot<Product>> getAllProducts(){
     return productsRef.get();
   }
+
+
   static final bookingsRef = FirebaseFirestore.instance
       .collection('bookings')
       .withConverter(
@@ -31,5 +33,11 @@ class FireStoreService {
   static Future<QuerySnapshot<Booking>> getAllBookings() {
     return bookingsRef.get();
   }
+
+
+
+
+
+
 
 }

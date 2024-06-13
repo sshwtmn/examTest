@@ -1,8 +1,11 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:kati_masterclass_app/widgets/product/booking_item.dart';
+import 'package:kati_masterclass_app/widgets/product/booking_grid_builder.dart';
 import 'package:provider/provider.dart';
 
-import '../providers/bookings.dart';
+import '../providers/bookings_provider.dart';
+
+
 
 class MyBookingsScreen extends StatefulWidget {
   const MyBookingsScreen({super.key});
@@ -12,28 +15,22 @@ class MyBookingsScreen extends StatefulWidget {
 }
 
 class _MyBookingsScreenState extends State<MyBookingsScreen> {
+
+
+  @override
+  void initState() {
+    Provider.of<Bookings>(context,listen: false).fetchAllBookings();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
-    final bookingData = Provider.of<Bookings>(context);
-    final bookings = bookingData.items;
-
     return Scaffold(
       appBar: AppBar(
         title: const Text('My Orders'),
         centerTitle: true,
       ),
-      body: GridView.builder(
-        padding: const EdgeInsets.all(20.0),
-        itemCount: bookings.length,
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 1,
-          childAspectRatio: 2 / 2,
-          crossAxisSpacing: 10,
-          mainAxisSpacing: 10,
-        ),
-        itemBuilder: (context, i) => ChangeNotifierProvider.value(
-            value: bookings.elementAt(i), child: const BookingItemWidget()),
-      ),
+      body:  const BookingGridBuilder()
     );
   }
 }
