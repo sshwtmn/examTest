@@ -1,4 +1,4 @@
-import 'package:firebase_auth/firebase_auth.dart';
+
 import 'package:flutter/material.dart';
 import 'package:kati_masterclass_app/widgets/product/booking_grid_builder.dart';
 import 'package:provider/provider.dart';

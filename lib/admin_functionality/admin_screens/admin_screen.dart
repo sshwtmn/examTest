@@ -14,7 +14,6 @@ class AdminScreen extends StatefulWidget {
 }
 
 class _AdminScreenState extends State<AdminScreen> {
-  final _idController = TextEditingController();
   final _titleController = TextEditingController();
   final _priceController = TextEditingController();
   final _imageUrlController = TextEditingController();
