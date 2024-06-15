@@ -38,8 +38,6 @@ class MyApp extends StatelessWidget {
     final FlutterLocalization localization = FlutterLocalization.instance;
 
 
-
-
   @override
   Widget build(BuildContext context) {
     return  MaterialApp(

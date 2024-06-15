@@ -1,4 +1,3 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:kati_masterclass_app/providers/bookings_provider.dart';
 import 'package:kati_masterclass_app/widgets/product/booking_item.dart';
@@ -19,7 +18,6 @@ class _BookingGridBuilderState extends State<BookingGridBuilder> {
   Widget build(BuildContext context) {
     final bookingsData = Provider.of<Bookings>(context);
     final booking = bookingsData.items;
-    print(bookingsData.items.length);
 
     return GridView.builder(
       padding: const EdgeInsets.all(20.0),

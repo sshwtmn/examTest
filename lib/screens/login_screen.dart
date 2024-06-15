@@ -101,15 +101,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                     ),
                     StyledButton(
                       onPressed: login,
-                        // onPressed: () async {
-                        //   if (_formKey.currentState!.validate()) {
-                        //     final email = _emailController.text.trim();
-                        //     final password = _passwordController.text.trim();
-                        //
-                        //     final user = await AuthService.login(
-                        //         email, password);
-                        //   }
-                        // },
+
                         child: const Center(child: StyledText('Login'))),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,

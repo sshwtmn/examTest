@@ -117,14 +117,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       ),
                       StyledButton(
                         onPressed: register,
-                          // onPressed: () async {
-                          //   if (_formKey.currentState!.validate()) {
-                          //     final email = _emailController.text.trim();
-                          //     final password = _passwordController.text.trim();
-                          //     final user =
-                          //     await AuthService.signUp(email, password);
-                          //   }
-                          // },
                           child: const Center(child: StyledText('Register'))),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
