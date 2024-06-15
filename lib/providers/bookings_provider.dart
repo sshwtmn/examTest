@@ -31,6 +31,13 @@ class Bookings with ChangeNotifier {
         notifyListeners();
       }
     }
+    void deleteBooking(Booking booking) async {
+    await FireStoreService.deleteBooking(booking);
+
+    _items.remove(booking);
+    notifyListeners();
+    }
+
   }
 
 

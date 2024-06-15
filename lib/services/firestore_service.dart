@@ -34,10 +34,8 @@ class FireStoreService {
     return bookingsRef.get();
   }
 
-
-
-
-
-
+  static Future<void> deleteBooking(Booking booking) async {
+    await bookingsRef.doc(booking.id).delete();
+  }
 
 }
